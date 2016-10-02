@@ -11,7 +11,7 @@
 /.classpath
 /.project
 .settings/
-
+/.idea/*.xml
 *.idea*
 *.project
 *.iml
