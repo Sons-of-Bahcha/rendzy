@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="daa04ebc-c05d-46a4-9d08-0ce11ad93414" name="Default" comment="gitignore added">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/Controller.java" />
       <change type="DELETED" beforePath="C:\Users\ROOT\IdeaProjects\Rendzy\pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ROOT\IdeaProjects\Rendzy\src\main\java\controler\Controler.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="rendzy.iws" />
@@ -604,7 +602,13 @@
       <option name="project" value="LOCAL" />
       <updated>1475426051229</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="gitignore added">
+      <created>1475427098949</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1475427098949</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
