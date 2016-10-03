@@ -1,3 +1,5 @@
+package GameObjects;
+
 /**
  * Created by ROOT on 02.10.2016.
  */

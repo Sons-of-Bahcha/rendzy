@@ -18,9 +18,12 @@ public class Window extends JFrame {
     }
     private Window(int width,int height){
         this.map=new BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);
+        Graphics g=map.getGraphics();
+
         setVisible(true);
     }
     public void paint(Graphics g){
         g.drawImage(map,0,0,null);
+
     }
 }
