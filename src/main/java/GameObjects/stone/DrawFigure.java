@@ -1,4 +1,4 @@
-package GameObjects.noughtsAndCrosses;
+package GameObjects.stone;
 
 import java.awt.*;
 

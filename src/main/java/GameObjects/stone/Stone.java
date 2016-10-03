@@ -1,4 +1,4 @@
-package GameObjects.noughtsAndCrosses;
+package GameObjects.stone;
 
 import java.awt.*;
 
@@ -10,7 +10,17 @@ import java.awt.*;
  *
  * !!! Замечание - класс полностью не тестировался.
  */
-public class Nought implements DrawFigure{
+public class Stone implements DrawFigure{
+    private final Color color;
+
+    /**
+     *
+     * @param color - цвет текущего камня, который не изменяется в течении игры
+     */
+    public Stone(Color color) {
+        this.color = color;
+    }
+
     /**
      * Метод в котором рисуется нолик, причем цвет устанавливается по умолчанию устанавливается красным
      *

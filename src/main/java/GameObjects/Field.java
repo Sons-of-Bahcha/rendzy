@@ -1,6 +1,6 @@
 package GameObjects;
 
-import GameObjects.noughtsAndCrosses.DrawFigure;
+import GameObjects.stone.DrawFigure;
 
 /**
  * Класс Field, это просто ячейка на игровом поле. Эта ячейка будет восприниматься, как точка, без ширины и длины.
