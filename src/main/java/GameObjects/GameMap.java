@@ -13,19 +13,10 @@ import java.awt.image.BufferedImage;
  * Changed by Viteker on 03.10.2016. 9:38
  * Сорян нечаяно стер, когда ты созда этот класс) добавь потом
  * @author ROOT
- * @version 1.1
+ * @version 1.2
  */
 public class GameMap extends BufferedImage {
-    /*Table map;   предлагаю сделать не один объект а массив ячеек этой карты
-    private Graphics g; - можно убрать, т.к. мы можем получить доступ к нему, обратившись к геттеру
-
-    А этот метод можнои не переопределять
-    @Override
-    public Graphics getGraphics() {
-        return super.getGraphics();
-    }
-    */
-
+    private final int sizeCell;//размер ячейки поля
     private Cell[][] cells; // Создаем массив ячеек поля
     //Здесь я заебеню анонимный конструктор и рандомный размер массива поставлю, потом сам поставь сколько тебе нужно будет
     {
@@ -37,15 +28,39 @@ public class GameMap extends BufferedImage {
             }
         }
     }
+
+    /**
+     * Метод преобразует координату x нажатия клавиши в координату x класса {@link Cell}
+     * @param x - координата нажатия клавиши
+     * @return преобразованная координате x класса {@link Cell}
+     */
+    public int transformX(int x){
+        return x/sizeCell;
+    }
+    /**
+     * Метод преобразует координату y нажатия клавиши в координату y класса {@link Cell}
+     * @param y - координата нажатия клавиши
+     * @return преобразованная координате y класса {@link Cell}
+     */
+    public int transformY(int y){
+        return y/sizeCell;
+    }
+    /**
+     *
+     * @param x - координата x {@link GameMap}
+     * @param y - координата y {@link GameMap}
+     * @return находится
+     */
     public boolean isCellFree(int x,int y)
     {
-        return (cells[y][x] == null);
+        return cells[y][x].getStone() == null;
 
     }
     public void setCell(int x,int y,Stone s) {
-        cells[y][x].setFigure(s);
+        cells[y][x].setStone(s);
     }
-    public GameMap(int width, int height, int imageType) {
+    public GameMap(int width, int height, int imageType,int sizeCell) {
         super(width, height, imageType);
+        this.sizeCell=sizeCell;
     }
 }

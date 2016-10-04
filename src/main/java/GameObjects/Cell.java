@@ -39,14 +39,14 @@ public class Cell {
      *
      * @return Возвращает данную фигуру в этой ячейке, тоесть либо нолик, либо крестик
      */
-    public DrawStone getFigure() {
+    public DrawStone getStone() {
         return stone;
     }
     /**
      *
      * @param figure - устанавливаем в этой фигуре либо ноль, либо крестик
      */
-    public void setFigure(DrawStone figure) {
+    public void setStone(DrawStone figure) {
         this.stone = figure;
     }
 

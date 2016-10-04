@@ -1,6 +1,6 @@
 package controller;
 
-import gui.GameField;
+import gui.Window;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,8 +10,8 @@ import java.awt.event.ActionListener;
  */
 
 public class Controller implements ActionListener {
-    private GameField gf;
-    public Controller(GameField gf){
+    private Window gf;
+    public Controller(Window gf){
         this.gf = gf;
         Timer t=new Timer(20,this);
         t.start();

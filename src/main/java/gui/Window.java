@@ -7,16 +7,16 @@ import java.awt.image.BufferedImage;
 /**
  * Created by 123 on 02.10.2016.
  */
-public class GameField extends JFrame {
+public class Window extends JFrame {
     BufferedImage map;
-    public GameField(int width, int height, String s){
+    public Window(int width, int height, String s){
         super(s);
         setSize(width, height);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     }
-    private GameField(int width, int height){
+    private Window(int width, int height){
         this.map=new BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);
         Graphics g=map.getGraphics();
 
