@@ -1,5 +1,8 @@
 package not_name;
 
+import GameObjects.Cell;
+import GameObjects.GameMap;
+
 /**
  * Класс игрока, его главные действия должны вызываться в методе action.
  * А метод action в свою очередь вызывается каждую итерацию игрого цикла
@@ -8,13 +11,13 @@ package not_name;
  *
  * Сначала нужно проверить верно ли он передал координаты, тоесть не кликнул ли он за пределы поля.
  * Пусть это будет метод checkKoordinates(int x,int y);
- * Причем координаты x и y - координаты {@link GameObjects.Field}
+ * Причем координаты x и y - координаты {@link Cell}
  * а не координаты класса {@link GameObjects.GameMap}
  *
  * Потом перед тем, как поставить нужно проверить, свободна ли эта ячейка, пусть это будет метод checkEmptyCell(int x,int y);
  * Допустим, можешь называть подругому.
  *
- * Затем ставить, вызывая в классе {@link GameObjects.Field} setFigure(new Stone(Color.BLACK || Color.WHITE));
+ * Затем ставить, вызывая в классе {@link Cell} setFigure(new Stone(Color.BLACK || Color.WHITE));
  * Соответсвующий камушек, для соответствующего игрока. Пусть это будет в методе setStone(int x,int y);
  *
  * А проверку на вигрыш попробуй сделать в отдельном классе, чтобы там проверялся выигрыш или проигрыш. А не занимался этим игрок.
@@ -25,7 +28,7 @@ package not_name;
  * @version 1.0
  */
 public interface Player extends Action{
-    boolean checkKoordinates(int x,int y);
-    boolean checkEmptyCell(int x,int y);
-    void setStone(int x,int y);
+    boolean checkCoordinates(int x,int y);
+    boolean checkEmptyCell(GameMap m,int x,int y);
+    void setStone(GameMap m, int x,int y);
 }
