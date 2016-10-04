@@ -10,7 +10,7 @@ import java.awt.*;
  *
  * !!! Замечание - класс полностью не тестировался.
  */
-public class Stone implements DrawFigure{
+public class Stone implements DrawStone {
     private final Color color;
 
     /**

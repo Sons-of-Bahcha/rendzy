@@ -6,9 +6,9 @@ import java.awt.*;
  * Интерфейс в котором всего один метод, который рисует данную фигуру
  * Created by Viteker on 03.10.2016.
  * @author Viteker
- * @version 1.0
+ * @version 1.1
  */
-public interface DrawFigure {
+public interface DrawStone {
     /**
      *  Метод в котором рисуется фигура, причем цвет устанавливается по умолчанию каждой фигуре, а не задается
      * @param g - Графический объект на котором рисуем данную фигуру

@@ -1,6 +1,6 @@
 package GameObjects;
 
-import GameObjects.stone.DrawFigure;
+import GameObjects.stone.DrawStone;
 
 /**
  * Класс Cell, это просто ячейка на игровом поле. Эта ячейка будет восприниматься, как точка, без ширины и длины.
@@ -13,16 +13,17 @@ import GameObjects.stone.DrawFigure;
  * Поле size (размер всех ячеек) пусть хранится в классе GameMap, чтобы для всех Cell был один размер, а не для каждого свой
  *
  * Ну вроде все
- * Причем
+ *
+ * @Changed by Maks
  * @autor Viteker
- * @version 1.0
+ * @version 1.1
  *
  * !!! Замечание - Вроде тест не нужен и так все понятно
  */
 
 public class Cell {
     private final int x,y;
-    private DrawFigure stone;
+    private DrawStone stone;
 
     /**
      * Единственный нужный конструктор, который устанавливает неизменные координаты ячейки поля
@@ -38,14 +39,14 @@ public class Cell {
      *
      * @return Возвращает данную фигуру в этой ячейке, тоесть либо нолик, либо крестик
      */
-    public DrawFigure getFigure() {
+    public DrawStone getFigure() {
         return stone;
     }
     /**
      *
      * @param figure - устанавливаем в этой фигуре либо ноль, либо крестик
      */
-    public void setFigure(DrawFigure figure) {
+    public void setFigure(DrawStone figure) {
         this.stone = figure;
     }
 
