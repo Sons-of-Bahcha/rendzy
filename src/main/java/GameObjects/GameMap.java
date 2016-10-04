@@ -1,5 +1,7 @@
 package GameObjects;
 
+import GameObjects.stone.Stone;
+
 import java.awt.image.BufferedImage;
 
 /**
@@ -40,7 +42,7 @@ public class GameMap extends BufferedImage {
         return (cells[y][x] == null);
 
     }
-    public boolean setCell(int x,int y,Stone s) {
+    public void setCell(int x,int y,Stone s) {
         cells[y][x].setFigure(s);
     }
     public GameMap(int width, int height, int imageType) {

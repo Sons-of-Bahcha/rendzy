@@ -24,6 +24,6 @@ public class LocalPlayer implements Player {
     }
 
     public void setStone(GameMap m,int x, int y) {
-        m.setCell(x,y);
+        m.setCell(x,y,stone);
     }
 }
