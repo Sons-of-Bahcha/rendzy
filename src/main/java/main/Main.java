@@ -10,7 +10,7 @@ import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
-        Window w=createWindow(800,600,"",15);
+        Window w=createWindow(800,600,"");
         initPlayers(w);
     }
     public static void initPlayers(Window w){
@@ -21,7 +21,7 @@ public class Main {
 
         w.addMouseListener(new MouseControl(player1,w));
     }
-    private static Window createWindow(int width, int height, String s, int size) {
+    private static Window createWindow(int width, int height, String s) {
         return new Window(width,height,s);
     }
 }

@@ -30,7 +30,7 @@ public class LocalPlayer implements Action {
     }
 
     public void setStone(GameMap m,int x, int y) {
-        m.setCell(x,y,new Stone(stone.getColor()));
+        m.setCell(x,y,stone);
     }
 
     public LocalPlayer getOponent() {

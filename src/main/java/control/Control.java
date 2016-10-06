@@ -12,12 +12,4 @@ public class Control {
     public Control(LocalPlayer lp){
         this.lp=lp;
     }
-
-    public LocalPlayer getLp() {
-        return lp;
-    }
-
-    public void setLp(LocalPlayer lp) {
-        this.lp = lp;
-    }
 }
