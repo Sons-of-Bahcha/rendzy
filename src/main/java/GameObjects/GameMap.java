@@ -89,6 +89,10 @@ public class GameMap extends BufferedImage {
         s.draw(getGraphics(),x*sizeCell,y*sizeCell,sizeCell);
     }
 
+        public Cell getCell(int x,int y)
+        {
+            return cells[y][x];
+        }
     public int getX() {
         return x;
     }
