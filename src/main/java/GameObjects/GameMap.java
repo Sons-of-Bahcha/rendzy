@@ -1,8 +1,10 @@
 package GameObjects;
 
+import GameObjects.stone.DrawStone;
 import GameObjects.stone.EmptyCell;
 import GameObjects.stone.Stone;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
@@ -19,25 +21,41 @@ import java.awt.image.BufferedImage;
 public class GameMap extends BufferedImage {
     private final int sizeCell;//размер ячейки поля
     private Cell[][] cells; // Создаем массив ячеек поля
-    //Здесь я заебеню анонимный конструктор и рандомный размер массива поставлю, потом сам поставь сколько тебе нужно будет
-    {
+    private int x,y;
+
+    /**
+     * главный конструктор для создания Image
+     * @param typeIntRgb - тип цветовой модели
+     */
+    public GameMap(int x,int y, int typeIntRgb, int sizeCell) {
+        super(sizeCell*15,sizeCell*15,typeIntRgb);
+        this.sizeCell=sizeCell;
+        this.x=x;
+        this.y=y;
+        prepareBackground();
+        prepareCells();
+    }
+    /**
+     * Метода который рисует игровое поле,
+     * Вызывается после метода prepareBackground(), в главном конструкторе;
+     */
+    private void prepareCells(){
         cells=new Cell[15][15];
         //заполняем массив стартовыми ячейками, причем текущая фигура в ней = null, тоесть ни крестик, ни нолик
         for (int y=0;y<cells.length;y++) {
             for(int x=0;x<cells[y].length;x++){
                 cells[y][x]=new Cell(x,y);
+                setCell(x,y,new EmptyCell());//Вызывая сеттер, мы отрисовываем на поле этот крестик
             }
         }
     }
     /**
-     * главный конструктор для создания Image
-     * @param width - ширина image
-     * @param height - высота image
-     * @param typeIntRgb - тип цветовой модели
+     * Подготавливаем белый фон для окна
      */
-    public GameMap(int width, int height, int typeIntRgb, int sizeCell) {
-        super(width,height,typeIntRgb);
-        this.sizeCell=sizeCell;
+    private void prepareBackground(){
+        Graphics g=getGraphics();
+        g.setColor(Color.WHITE);
+        g.fillRect(0,0,getWidth(),getHeight());
     }
     /**
      * Метод преобразует координату x нажатия клавиши в координату x класса {@link Cell}
@@ -66,8 +84,24 @@ public class GameMap extends BufferedImage {
         return cells[y][x].getStone() instanceof EmptyCell;
 
     }
-    public void setCell(int x,int y,Stone s) {
+    public void setCell(int x,int y,DrawStone s) {
         cells[y][x].setStone(s);
+        s.draw(getGraphics(),x*sizeCell,y*sizeCell,sizeCell);
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
 }

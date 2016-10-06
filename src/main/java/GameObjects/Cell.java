@@ -24,7 +24,7 @@ import GameObjects.stone.EmptyCell;
 
 public class Cell {
     private final int x,y;
-    private DrawStone stone=new EmptyCell();
+    private DrawStone stone;
 
     /**
      * Единственный нужный конструктор, который устанавливает неизменные координаты ячейки поля

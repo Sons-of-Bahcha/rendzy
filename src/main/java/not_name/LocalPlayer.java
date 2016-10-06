@@ -2,6 +2,7 @@ package not_name;
 
 import GameObjects.GameMap;
 import GameObjects.stone.Stone;
+import control.Control;
 
 import java.awt.*;
 
@@ -10,18 +11,17 @@ import java.awt.*;
  */
 public class LocalPlayer implements Action {
     private Stone stone;
-    private boolean play;
     private LocalPlayer oponent;
 
     public LocalPlayer(Stone stone){
         this.stone=stone;
+        this.oponent=oponent;
     }
 
     public void action(GameMap mp,int x,int y) {
         if(checkEmptyCell(mp, x, y)){
             setStone(mp,x,y);
-            play=false;
-            oponent.play=true;
+            Control.lp=oponent;
         }
     }
 
@@ -33,11 +33,11 @@ public class LocalPlayer implements Action {
         m.setCell(x,y,new Stone(stone.getColor()));
     }
 
-    public boolean isPlay() {
-        return play;
+    public LocalPlayer getOponent() {
+        return oponent;
     }
 
-    public void setPlay(boolean play) {
-        this.play = play;
+    public void setOponent(LocalPlayer oponent) {
+        this.oponent = oponent;
     }
 }

@@ -13,7 +13,7 @@ import java.awt.image.BufferedImage;
  * @version 1.2
  */
 public class Window extends JFrame {
-    private final BufferedImage bg;//главный фон
+    private final GameMap bg;//главный фон
 
     /**
      * Стартовый конструктор, в котором создается окно с указанными размерами и title для него устанавливаетя строчкой s
@@ -39,18 +39,7 @@ public class Window extends JFrame {
      */
     private Window(int width, int height){
         super();
-        this.bg=new GameMap(width,height,BufferedImage.TYPE_INT_RGB,32);
-        prepareBackground();
-
-    }
-
-    /**
-     * Подготавливаем белый фон для окна
-     */
-    private void prepareBackground(){
-        Graphics g=bg.getGraphics();
-        g.setColor(Color.WHITE);
-        g.fillRect(0,0,bg.getWidth(),bg.getHeight());
+        this.bg=new GameObjects.GameMap(50,50,BufferedImage.TYPE_INT_RGB,32);
     }
 
     /**
@@ -58,10 +47,10 @@ public class Window extends JFrame {
      * @param g - графический рбъекта на главного окна {@link Window}
      */
     public void paint(Graphics g){
-        g.drawImage(bg,0,0,null);
+        g.drawImage(bg,bg.getX(),bg.getY(),null);
     }
 
-    public BufferedImage getBg() {
+    public GameMap getBg() {
         return bg;
     }
 }

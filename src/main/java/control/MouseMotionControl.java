@@ -11,8 +11,8 @@ import java.awt.event.MouseMotionListener;
  */
 public class MouseMotionControl extends Control implements MouseMotionListener{
 
-    public MouseMotionControl(GameMap gm, LocalPlayer lp) {
-        super(gm, lp);
+    public MouseMotionControl(LocalPlayer lp) {
+        super(lp);
     }
 
     /**

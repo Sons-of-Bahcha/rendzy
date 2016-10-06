@@ -1,6 +1,7 @@
 package control;
 
 import GameObjects.GameMap;
+import gui.Window;
 import not_name.LocalPlayer;
 
 import java.awt.event.MouseEvent;
@@ -10,9 +11,10 @@ import java.awt.event.MouseListener;
  * Created by 123 on 06.10.2016.
  */
 public class MouseControl extends Control implements MouseListener{
-
-    public MouseControl(GameMap gm, LocalPlayer lp) {
-        super(gm, lp);
+    private final Window w;
+    public MouseControl(LocalPlayer lp, Window w) {
+        super(lp);
+        this.w=w;
     }
 
     /**
@@ -31,11 +33,15 @@ public class MouseControl extends Control implements MouseListener{
      * @param e
      */
     public void mousePressed(MouseEvent e) {
-        if(!lp.isPlay())return;
         int x=e.getX();
         int y=e.getY();
-        if(x<gm.getWidth() && y<gm.getHeight()){
-            lp.action(gm,gm.transformX(x),gm.transformY(y));
+        GameMap mp=w.getBg();
+
+        if(x>mp.getX() && x< mp.getX()+mp.getWidth() && y>mp.getY() && y<mp.getY() + mp.getHeight()){
+            x-=mp.getX();
+            y-=mp.getY();
+            lp.action(mp, mp.transformX(x), mp.transformY(y));
+            w.repaint();
         }
 
     }

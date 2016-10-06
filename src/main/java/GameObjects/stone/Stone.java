@@ -34,7 +34,7 @@ public class Stone implements DrawStone {
     public void draw(Graphics g, int x, int y, int size) {
         Color c=g.getColor();//Сохраняем текущий цвет в гр. объекте
         g.setColor(color);// Устанавливаем нужным нас цвет
-        g.drawOval(x,y,size,size);
+        g.fillOval(x,y,size,size);
         g.setColor(c);//Возвращаем старый цвет
     }
 

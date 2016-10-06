@@ -21,8 +21,8 @@ public class EmptyCell implements DrawStone {
     public void draw(Graphics g, int x, int y, int size) {
         Color c=g.getColor();
         g.setColor(Color.BLACK);
-        g.drawLine(x,y,x+size,y+size);
-        g.drawLine(x+size,y,x,y+size);
+        g.drawLine(x+size/2,y,x+size/2,y+size);
+        g.drawLine(x,y+size/2,x+size,y+size/2);
         g.setColor(c);
     }
 }
