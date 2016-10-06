@@ -14,11 +14,11 @@ import static org.junit.Assert.*;
 public class StoneTest {
 
     @Test
-    public void testDraw() throws Exception {
+    public void testDraw(){
         Stone stone=new Stone(Color.BLUE);
         gui.Window w=new Window(200,200,"pedik");
-        stone.draw(w.getGraphics(), 50, 50, 30);
-        w.paint(w.getGraphics());
+        stone.draw(w.getBg().getGraphics(), 50, 50, 30);
+        w.repaint();
         while(true)
         {
 

@@ -60,4 +60,8 @@ public class Window extends JFrame {
     public void paint(Graphics g){
         g.drawImage(bg,0,0,null);
     }
+
+    public BufferedImage getBg() {
+        return bg;
+    }
 }
