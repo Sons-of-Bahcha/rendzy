@@ -37,4 +37,12 @@ public class Stone implements DrawStone {
         g.drawOval(x,y,size,size);
         g.setColor(c);//Возвращаем старый цвет
     }
+
+    /**
+     *
+     * @return возвращает ссылку на Color ячейки
+     */
+    public Color getColor() {
+        return color;
+    }
 }

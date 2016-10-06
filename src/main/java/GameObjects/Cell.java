@@ -33,7 +33,6 @@ public class Cell {
      */
     public Cell(int x, int y){
         this.x=x; this.y=y;
-        stone=null;
     }
 
     /**

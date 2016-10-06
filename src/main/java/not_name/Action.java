@@ -1,5 +1,7 @@
 package not_name;
 
+import GameObjects.GameMap;
+
 /**
  * Любой класс реализующий этот метод, означает, что он входит в разряд
  * игровых моделей, которые могут повлиять на игру.
@@ -15,5 +17,5 @@ public interface Action {
      * какие ему понадобятся параметры, я не знаю.
      * Узнаем в ходе разработки
      */
-    void action();
+    void action(GameMap mp,int x, int y);
 }

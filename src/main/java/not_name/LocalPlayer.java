@@ -8,15 +8,21 @@ import java.awt.*;
 /**
  * Created by ROOT on 04.10.2016.
  */
-public class LocalPlayer implements Player {
-    private Color color;
+public class LocalPlayer implements Action {
     private Stone stone;
-    public void action() {
+    private boolean play;
+    private LocalPlayer oponent;
 
+    public LocalPlayer(Stone stone){
+        this.stone=stone;
     }
 
-    public boolean checkCoordinates(int x, int y) {
-        return false;
+    public void action(GameMap mp,int x,int y) {
+        if(checkEmptyCell(mp, x, y)){
+            setStone(mp,x,y);
+            play=false;
+            oponent.play=true;
+        }
     }
 
     public boolean checkEmptyCell(GameMap m,int x, int y) {
@@ -24,6 +30,14 @@ public class LocalPlayer implements Player {
     }
 
     public void setStone(GameMap m,int x, int y) {
-        m.setCell(x,y,stone);
+        m.setCell(x,y,new Stone(stone.getColor()));
+    }
+
+    public boolean isPlay() {
+        return play;
+    }
+
+    public void setPlay(boolean play) {
+        this.play = play;
     }
 }
