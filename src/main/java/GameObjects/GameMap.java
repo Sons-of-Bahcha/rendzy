@@ -28,7 +28,16 @@ public class GameMap extends BufferedImage {
             }
         }
     }
-
+    /**
+     * главный конструктор для создания Image
+     * @param width - ширина image
+     * @param height - высота image
+     * @param typeIntRgb - тип цветовой модели
+     */
+    public GameMap(int width, int height, int typeIntRgb, int sizeCell) {
+        super(width,height,typeIntRgb);
+        this.sizeCell=sizeCell;
+    }
     /**
      * Метод преобразует координату x нажатия клавиши в координату x класса {@link Cell}
      * @param x - координата нажатия клавиши
@@ -59,8 +68,5 @@ public class GameMap extends BufferedImage {
     public void setCell(int x,int y,Stone s) {
         cells[y][x].setStone(s);
     }
-    public GameMap(int width, int height, int imageType,int sizeCell) {
-        super(width, height, imageType);
-        this.sizeCell=sizeCell;
-    }
+
 }
