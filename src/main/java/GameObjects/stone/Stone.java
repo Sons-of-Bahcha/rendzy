@@ -25,15 +25,15 @@ public class Stone implements DrawStone {
      * Метод в котором рисуется нолик, причем цвет устанавливается по умолчанию устанавливается красным
      *
      * @param g    - Графический объект на котором рисуем данную фигуру
-     * @param x    - Координата x
-     * @param y    - Координата y
+     * @param x    - Координата x {@link GameObjects.GameMap}
+     * @param y    - Координата y {@link GameObjects.GameMap}
      * @param size - Размер этой самой фигуры учитываем, что width=height
      *
      * !!! Замечание - метод не тестировался. Должен отрисоваться нолик в гр. объекте, в нужном месте и с нужными размерами
      */
     public void draw(Graphics g, int x, int y, int size) {
         Color c=g.getColor();//Сохраняем текущий цвет в гр. объекте
-        g.setColor(Color.RED);// Устанавливаем нужным нас цвет
+        g.setColor(color);// Устанавливаем нужным нас цвет
         g.drawOval(x,y,size,size);
         g.setColor(c);//Возвращаем старый цвет
     }
