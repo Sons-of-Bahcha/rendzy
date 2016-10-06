@@ -16,7 +16,7 @@ public class emptyCell implements DrawStone {
      * @param y    - Координата y {@link GameObjects.GameMap}
      * @param size - Размер этой самой фигуры учитываем, что width=height
      *
-     * !!! Замечание - метод не тестировался. Должен отрисоваться нолик в гр. объекте, в нужном месте и с нужными размерами
+     * !!! Замечание - метод не тестировался. Должен отрисоваться крестик в гр. объекте, в нужном месте и с нужными размерами
      */
     public void draw(Graphics g, int x, int y, int size) {
         Color c=g.getColor();
