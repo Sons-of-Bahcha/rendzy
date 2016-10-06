@@ -1,6 +1,7 @@
 package GameObjects;
 
 import GameObjects.stone.DrawStone;
+import GameObjects.stone.EmptyCell;
 
 /**
  * Класс Cell, это просто ячейка на игровом поле. Эта ячейка будет восприниматься, как точка, без ширины и длины.
@@ -23,7 +24,7 @@ import GameObjects.stone.DrawStone;
 
 public class Cell {
     private final int x,y;
-    private DrawStone stone;
+    private DrawStone stone=new EmptyCell();
 
     /**
      * Единственный нужный конструктор, который устанавливает неизменные координаты ячейки поля

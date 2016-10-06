@@ -49,7 +49,7 @@ public class Window extends JFrame {
      */
     private void prepareBackground(){
         Graphics g=bg.getGraphics();
-        g.setColor(Color.LIGHT_GRAY);
+        g.setColor(Color.WHITE);
         g.fillRect(0,0,bg.getWidth(),bg.getHeight());
     }
 

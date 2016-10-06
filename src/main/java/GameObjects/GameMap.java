@@ -1,5 +1,6 @@
 package GameObjects;
 
+import GameObjects.stone.EmptyCell;
 import GameObjects.stone.Stone;
 
 import java.awt.image.BufferedImage;
@@ -62,7 +63,7 @@ public class GameMap extends BufferedImage {
      */
     public boolean isCellFree(int x,int y)
     {
-        return cells[y][x].getStone() == null;
+        return cells[y][x].getStone() instanceof EmptyCell;
 
     }
     public void setCell(int x,int y,Stone s) {
