@@ -5,6 +5,8 @@ import GameObjects.stone.EmptyCell;
 import gui.Window;
 import not_name.Player;
 
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -42,14 +44,14 @@ public class MouseControl extends Control implements MouseListener{
             x-=mp.getX();
             y-=mp.getY();
             lp.action(mp, mp.transformX(x), mp.transformY(y));
-
-            try {
-                isPlayerWinner();
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-
             w.repaint();
+
+            Color c=isPlayerWinner();
+            if(c!=null) {
+                String s = c == Color.RED ? "Red Player" : "Green Player";
+                JOptionPane.showMessageDialog(null,s+" is winner");
+                System.exit(0);
+            }
         }
 
     }
@@ -87,16 +89,17 @@ public class MouseControl extends Control implements MouseListener{
     направление запуска проверяющего луча, который проверяет каждую следующую клетку от текущей в поисках похожих елементов
     там карочи творится магия, я не могу её объяснить. Работает и ладно?! Она слишком очевидная
      */
-    private void isPlayerWinner() throws Exception {
+    private Color isPlayerWinner(){
         for(int i=0;i<15;i++)
             for(int j=0;j<15;j++)
             {
                 if(!(w.getBg().getCell(i,j).getStone() instanceof EmptyCell))
                     if(isFiveInRow(i,j,"right-down") || isFiveInRow(i,j,"up")||isFiveInRow(i,j,"down") || isFiveInRow(i,j,"left")||isFiveInRow(i,j,"right")
                             ||isFiveInRow(i,j,"left-down") || isFiveInRow(i,j,"right-up") || isFiveInRow(i,j,"left-up"))
-                        throw new Exception("Winner is found. Winner color is "+lp.getOponent().getStone().getColor());
+                                return lp.getOponent().getStone().getColor();
+                        //throw new Exception("Winner is found. Winner color is "+lp.getOponent().getStone().getColor());
             }
-
+        return null;
     }
     private boolean isFiveInRow(int x,int y, String direction)
     {
