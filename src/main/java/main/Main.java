@@ -2,9 +2,8 @@ package main;
 
 import GameObjects.stone.Stone;
 import control.MouseControl;
-import controller.Controller;
 import gui.Window;
-import not_name.LocalPlayer;
+import not_name.Player;
 
 import java.awt.*;
 
@@ -14,10 +13,8 @@ public class Main {
         initPlayers(w);
     }
     public static void initPlayers(Window w){
-        LocalPlayer player1=new LocalPlayer(new Stone((Color.RED)));
-        LocalPlayer player2=new LocalPlayer(new Stone(Color.GREEN));
-        player1.setOponent(player2);
-        player2.setOponent(player1);
+        Player player1=new Player(new Stone((Color.RED)));
+        Player player2=player1.getOponent();
 
         w.addMouseListener(new MouseControl(player1,w));
     }

@@ -2,7 +2,7 @@ package control;
 
 import GameObjects.GameMap;
 import gui.Window;
-import not_name.LocalPlayer;
+import not_name.Player;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -12,7 +12,7 @@ import java.awt.event.MouseListener;
  */
 public class MouseControl extends Control implements MouseListener{
     private final Window w;
-    public MouseControl(LocalPlayer lp, Window w) {
+    public MouseControl(Player lp, Window w) {
         super(lp);
         this.w=w;
     }

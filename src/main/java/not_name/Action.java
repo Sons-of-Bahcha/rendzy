@@ -9,13 +9,14 @@ import GameObjects.GameMap;
  * обращается к методам этого класса, в ходе своего игрового цикла
  * Created by Viteker on 03.10.2016.
  * @autor Viteker
- * @version 1.0
+ * @version 1.1
  */
 public interface Action {
     /**
-     * Пока реализация этого метода такая,
-     * какие ему понадобятся параметры, я не знаю.
-     * Узнаем в ходе разработки
+     * Пока этот метод использует только класс {@link Player} при своем ходе
+     * @param mp - Игровое поле {@link GameMap}
+     * @param x - координата x ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}
+     * @param y - координата y ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}
      */
     void action(GameMap mp,int x, int y);
 }
