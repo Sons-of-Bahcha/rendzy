@@ -8,23 +8,37 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
- * Игровое поле. В этом классе хранится массив ячеек
- * {@link Cell} - Вот этот класс, в нем будет храниться текущая фигура, которая сама себя рисует.
- * То что, она сама себя рисует - это удобно. Но с подсчетом количества нужно будет подумать
+ * Игровое поле. В этом классе хранится массив ячеек игрового поля {@link Cell}
+ * Этот класс является наследником {@link BufferedImage}, а значит имеет свой графический объект,
+ * который он отправляет своим ячейкам, чтобы они отрисовали камушек или ячейку пустого поля.
+ * В зависимости, что сейчас находится в поле stone класса {@link Cell}
  *
- * Changed by Viteker on 03.10.2016. 9:38
- * Сорян нечаяно стер, когда ты созда этот класс) добавь потом
+ * @commenter Viteker
  * @author ROOT
  * @version 1.3
  */
 public class GameMap extends BufferedImage {
-    private final int sizeCell;//размер ячейки поля
-    private Cell[][] cells; // Создаем массив ячеек поля
+    /**
+     * Размер каждой ячейки. Вопрос: может ли меняться размер во время игры? По сути да, но пока пусть
+     * это поле будет final
+     */
+    private final int sizeCell;
+    /**
+     * Матрица ячеек {@link Cell} игрового поля
+     */
+    private Cell[][] cells;
+    /**
+     * Координаты игрового поля, относительно главного окна {@link gui.Window}
+     */
     private int x,y;
 
     /**
-     * главный конструктор для создания Image
-     * @param typeIntRgb - тип цветовой модели
+     * Главный и единственный конструктор игрового поля в котором создается
+     * Игровое поле размеро
+     * @param x
+     * @param y
+     * @param typeIntRgb
+     * @param sizeCell
      */
     public GameMap(int x,int y, int typeIntRgb, int sizeCell) {
         super(sizeCell*15,sizeCell*15,typeIntRgb);
