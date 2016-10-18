@@ -48,7 +48,7 @@ public class Window extends JFrame {
      */
     private Window(int width, int height){
         super();
-        this.bg=new GameObjects.GameMap(50,50,BufferedImage.TYPE_INT_RGB,32);
+        this.bg=new GameObjects.GameMap(50,50,BufferedImage.TYPE_INT_RGB,32,15);
     }
 
     /**

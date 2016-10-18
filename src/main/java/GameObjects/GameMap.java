@@ -8,6 +8,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
+ * Надо добавить еще одну переменную размер поля(количество ячеек)
+ *
  * Игровое поле. В этом классе хранится массив ячеек игрового поля {@link Cell}
  * Этот класс является наследником {@link BufferedImage}, а значит имеет свой графический объект,
  * который он отправляет своим ячейкам, чтобы они отрисовали камушек или ячейку пустого поля.
@@ -23,6 +25,11 @@ public class GameMap extends BufferedImage {
      * это поле будет final
      */
     private final int sizeCell;
+    /**
+     * Количество ячеек в ширину игрового поля {@link GameMap}
+     * рекомендуемые размеры: 15, 30, 45 (15x15 ; 30x30 ; 45x45);
+     */
+    private final int sizeRouds;
     /**
      * Матрица ячеек {@link Cell} игрового поля
      */
@@ -40,9 +47,10 @@ public class GameMap extends BufferedImage {
      * @param typeIntRgb
      * @param sizeCell
      */
-    public GameMap(int x,int y, int typeIntRgb, int sizeCell) {
+    public GameMap(int x,int y, int typeIntRgb, int sizeCell,int sizeRouds) {
         super(sizeCell*15,sizeCell*15,typeIntRgb);
         this.sizeCell=sizeCell;
+        this.sizeRouds=sizeRouds;
         this.x=x;
         this.y=y;
         prepareBackground();
