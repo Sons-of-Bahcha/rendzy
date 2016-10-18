@@ -23,14 +23,14 @@ public class Client{
             String line;
             byte[] b=new byte[1024];
             while(true){
+                read.read(b);
+                line=new String(b);
+                System.out.println("I received: "+line);
+                
                 line=keyboard.readLine();
                 write.write(line.getBytes());
                 write.flush();
                 System.out.println("I sent: "+line);
-
-                read.read(b);
-                line=new String(b);
-                System.out.println("I received: "+line);
             }
 
         } catch (IOException e) {
