@@ -13,7 +13,7 @@ import GameObjects.GameMap;
  */
 public interface Action {
     /**
-     * Пока этот метод использует только класс {@link Player} при своем ходе
+     * Пока этот метод использует только класс {@link LocalPlayer} при своем ходе
      * @param mp - Игровое поле {@link GameMap}
      * @param x - координата x ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}
      * @param y - координата y ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}

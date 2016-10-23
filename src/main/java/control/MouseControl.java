@@ -3,7 +3,7 @@ package control;
 import GameObjects.GameMap;
 import GameObjects.stone.EmptyCell;
 import gui.Window;
-import not_name.Player;
+import not_name.LocalPlayer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,7 +15,7 @@ import java.awt.event.MouseListener;
  */
 public class MouseControl extends Control implements MouseListener{
     private final Window w;
-    public MouseControl(Player lp, Window w) {
+    public MouseControl(LocalPlayer lp, Window w) {
         super(lp);
         this.w=w;
     }
@@ -48,7 +48,7 @@ public class MouseControl extends Control implements MouseListener{
 
             Color c=isPlayerWinner();
             if(c!=null) {
-                String s = c == Color.RED ? "Red Player" : "Green Player";
+                String s = c == Color.RED ? "Red LocalPlayer" : "Green LocalPlayer";
                 JOptionPane.showMessageDialog(null,s+" is winner");
                 System.exit(0);
             }

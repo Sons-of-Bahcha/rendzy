@@ -1,24 +1,24 @@
 package control;
 
 import GameObjects.GameMap;
-import GameObjects.stone.EmptyCell;
-import not_name.Player;
+import not_name.LocalPlayer;
 
 /**
  * Created by 123 on 06.10.2016.
  */
 public class Control {
-    public static Player lp;
+    public static LocalPlayer lp;//первый игрок который ходит
     private static GameMap gameMap;
-    public Control(Player lp){
+
+    public Control(LocalPlayer lp){
         this.lp=lp;
     }
-    public Player getLp() {
+    public LocalPlayer getLp() {
         return lp;
     }
 
 
-    public static void setLp(Player lpr) {
+    public static void setLp(LocalPlayer lpr) {
         lp = lpr;
     }
 }

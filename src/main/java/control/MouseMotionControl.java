@@ -1,6 +1,6 @@
 package control;
 
-import not_name.Player;
+import not_name.LocalPlayer;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
@@ -10,7 +10,7 @@ import java.awt.event.MouseMotionListener;
  */
 public class MouseMotionControl extends Control implements MouseMotionListener{
 
-    public MouseMotionControl(Player lp) {
+    public MouseMotionControl(LocalPlayer lp) {
         super(lp);
     }
 
