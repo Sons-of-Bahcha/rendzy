@@ -3,8 +3,10 @@ package not_name;
 import GameObjects.GameMap;
 import GameObjects.stone.Stone;
 import control.Control;
+import gui.Window;
 
 import java.awt.*;
+
 
 /**
  * Класс игрока для игры на одном компьютере. В этом классе только один главный метод action() от которого происходят действие игрока (расстановка камушка).
@@ -53,13 +55,13 @@ public class LocalPlayer extends Player {
      * Если да, то камушек ставится и управление передается следующему игроку,
      * Если нет, то управление не передается и просто ждем, когда игрок выберет пустое поле
      *
-     * @param mp - игровое поле на которм проверяем пустое поле {@link GameMap}
+     * @param w - игровое поле на которм проверяем пустое поле {@link gui.Window}
      * @param x - координата x проверяющей ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}
      * @param y - координата y проверяющей ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}
      */
-    public void action(GameMap mp,int x,int y) {
-        if(checkEmptyCell(mp, x, y)){
-            mp.setCell(x,y,stone);
+    public void action(Window w, int x, int y) {
+        if(checkEmptyCell(w.getBg(), x, y)){
+            w.getBg().setCell(x,y,stone);
             Control.setLp(oponent);
         }
     }

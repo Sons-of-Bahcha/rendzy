@@ -1,6 +1,7 @@
 package not_name;
 
 import GameObjects.GameMap;
+import gui.Window;
 
 /**
  * Любой класс реализующий этот метод, означает, что он входит в разряд
@@ -13,9 +14,9 @@ import GameObjects.GameMap;
  */
 public interface Action {
     /**
-     * @param mp - Игровое поле {@link GameMap}
+     * @param w - Игровое поле {@link gui.Window}
      * @param x - координата x ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}
      * @param y - координата y ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}
      */
-    void action(GameMap mp,int x, int y);
+    void action(Window w, int x, int y);
 }

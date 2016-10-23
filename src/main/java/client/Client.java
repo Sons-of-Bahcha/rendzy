@@ -60,15 +60,16 @@ public class Client implements ActionListener{
     public void actionPerformed(ActionEvent e) {
     }
 
-    public String send(String s) throws IOException {
-        byte[] b=new byte[5];
-
+    public void send(String s) throws IOException {
         write.write(s.getBytes());
         System.out.println("I sent: "+s);
         write.flush();
 
+    }
+    public String receive() throws IOException {
+        byte[] b=new byte[5];
         read.read(b);
-        s=new String(b);
+        String s=new String(b);
         System.out.println("I received: "+s);
         return s;
     }

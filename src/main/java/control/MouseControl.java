@@ -12,7 +12,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
- * Created by 123 on 06.10.2016.
+ * Created by Viteker on 06.10.2016.
  */
 public class MouseControl extends Control implements MouseListener{
     private final Window w;
@@ -44,8 +44,7 @@ public class MouseControl extends Control implements MouseListener{
         if(x>mp.getX() && x< mp.getX()+mp.getWidth() && y>mp.getY() && y<mp.getY() + mp.getHeight()){
             x-=mp.getX();
             y-=mp.getY();
-            lp.action(mp, mp.transformX(x), mp.transformY(y));
-            w.repaint();
+            lp.action(w, mp.transformX(x), mp.transformY(y));
 
             Color c=isPlayerWinner();
             if(c!=null) {

@@ -4,11 +4,10 @@ import GameObjects.Cell;
 import GameObjects.GameMap;
 import GameObjects.stone.Stone;
 import client.Client;
-import control.Control;
+import gui.Window;
 
 import java.awt.*;
 import java.io.IOException;
-import java.util.StringTokenizer;
 
 /**
  * Created by Viteker on 23.10.2016.
@@ -25,25 +24,30 @@ public class OnlinePlayer extends Player{
 
     /**
      *
-     * @param mp - Игровое поле {@link GameMap}
+     * @param w - Игровое поле {@link gui.Window}
      * @param x  - координата x ячейки {@link Cell} игрового поля {@link GameMap}
      * @param y  - координата y ячейки {@link Cell} игрового поля {@link GameMap}
      */
-    public void action(GameMap mp, int x, int y) {
-        if(checkEmptyCell(mp, x, y)){
+    public void action(Window w, int x, int y) {
+        if(checkEmptyCell(w.getBg(), x, y)){
+            w.getBg().setCell(x,y,stone);
+            w.repaint();
+            System.out.println("I drawed");
             try {
-                s=client.send("0 "+x+" "+y).split(" ");
+                client.send("0 "+x+" "+y);
+                s=client.receive().split(" ");
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            mp.setCell(x,y,stone);
+
 
             int opX=Integer.parseInt(s[1]);
             int opY=Integer.parseInt(s[2]);
 
             System.out.println("opx="+opX+" opy="+opY);
 
-            mp.setCell(opX,opY,oponentStone);
+            w.getBg().setCell(opX,opY,oponentStone);
+            //w.repaint();
         }
     }
 
