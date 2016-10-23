@@ -61,7 +61,7 @@ public class Client implements ActionListener{
     }
 
     public String send(String s) throws IOException {
-        byte[] b=new byte[1024];
+        byte[] b=new byte[5];
 
         write.write(s.getBytes());
         System.out.println("I sent: "+s);
