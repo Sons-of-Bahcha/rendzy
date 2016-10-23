@@ -2,23 +2,26 @@ package control;
 
 import GameObjects.GameMap;
 import not_name.LocalPlayer;
+import not_name.Player;
 
 /**
- * Created by 123 on 06.10.2016.
+ * Created by Viteker on 06.10.2016.
+ * @author Viteker
+ * @version 1.4
  */
 public class Control {
-    public static LocalPlayer lp;//первый игрок который ходит
+    public static Player lp;//игрок который ходит
     private static GameMap gameMap;
 
-    public Control(LocalPlayer lp){
+    public Control(Player lp){
         this.lp=lp;
     }
-    public LocalPlayer getLp() {
+    public Player getLp() {
         return lp;
     }
 
 
-    public static void setLp(LocalPlayer lpr) {
+    public static void setLp(Player lpr) {
         lp = lpr;
     }
 }

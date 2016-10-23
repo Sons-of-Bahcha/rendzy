@@ -13,7 +13,7 @@ import java.awt.*;
  * @author Viteker
  * @version 1.3
  */
-public class LocalPlayer extends Player implements Action {
+public class LocalPlayer extends Player {
 
     /**
      * так как в игру Rendzy могут играть только двое, то у одного из игрока обязательно должен быть опонент,
@@ -74,13 +74,6 @@ public class LocalPlayer extends Player implements Action {
      */
     private boolean checkEmptyCell(GameMap m,int x, int y) {
         return (m.isCellFree(x,y));
-    }
-
-    /**
-     * @return Возвращает камушек этого игрока
-     */
-    public Stone getStone() {
-        return stone;
     }
 
     /**

@@ -3,6 +3,7 @@ package client;
 
 import GameObjects.stone.Stone;
 import not_name.LocalPlayer;
+import not_name.OnlinePlayer;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,30 +13,43 @@ import java.net.Socket;
 
 public class Client implements ActionListener{
     static final int port=1234;
-    static final String addres="7.57.203.140";
+    static final String addres="7.54.240.130";
 
     DataInputStream read;
     DataOutputStream write;
 
-    public Client(LocalPlayer p){
+    public Client(){
         try{
             Socket sc=new Socket(addres,port);
+            System.out.println("Connection -- true");
             read=new DataInputStream(sc.getInputStream());
             write=new DataOutputStream(sc.getOutputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-            byte[] b=new byte[1024];
+    public OnlinePlayer getPlayer(){
+        try{
+            byte[] b=new byte[2];
             read.read(b);
             String line=new String(b);
+            System.out.println("Line=|"+line+"|");
+            System.out.println("Boolean =="+line.equals("55")+"/");
+
             if(line.equals("55")){
-                p=new LocalPlayer(new Stone(Color.GREEN));
                 System.out.println("U're first player");
+                return new OnlinePlayer(new Stone(Color.GREEN),this);
+
             }else if(line.equals("44")){
-                p=new LocalPlayer(new Stone(Color.RED));
                 System.out.println("U're second player");
+                return new OnlinePlayer(new Stone(Color.RED),this);
+
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     /**
@@ -46,7 +60,7 @@ public class Client implements ActionListener{
     public void actionPerformed(ActionEvent e) {
     }
 
-    public void send(String s) throws IOException {
+    public String send(String s) throws IOException {
         byte[] b=new byte[1024];
 
         write.write(s.getBytes());
@@ -56,6 +70,7 @@ public class Client implements ActionListener{
         read.read(b);
         s=new String(b);
         System.out.println("I received: "+s);
+        return s;
     }
     public static void main(String[] args){
 

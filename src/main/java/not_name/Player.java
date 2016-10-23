@@ -7,7 +7,7 @@ import GameObjects.stone.Stone;
  * @author Viteker
  * @version 1.0
  */
-public abstract class Player {
+public abstract class Player implements Action{
     /**
      * Каждый игрок имеет свой цвет камушка, и изменять его не желательно.
      * Поэтому это поле лучше сделать final
@@ -16,5 +16,11 @@ public abstract class Player {
 
     public Player(Stone stone){
         this.stone=stone;
+    }
+    /**
+     * @return Возвращает камушек этого игрока
+     */
+    public Stone getStone() {
+        return stone;
     }
 }

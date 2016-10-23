@@ -4,6 +4,7 @@ import GameObjects.GameMap;
 import GameObjects.stone.EmptyCell;
 import gui.Window;
 import not_name.LocalPlayer;
+import not_name.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,7 +16,7 @@ import java.awt.event.MouseListener;
  */
 public class MouseControl extends Control implements MouseListener{
     private final Window w;
-    public MouseControl(LocalPlayer lp, Window w) {
+    public MouseControl(Player lp, Window w) {
         super(lp);
         this.w=w;
     }
@@ -96,7 +97,7 @@ public class MouseControl extends Control implements MouseListener{
                 if(!(w.getBg().getCell(i,j).getStone() instanceof EmptyCell))
                     if(isFiveInRow(i,j,"right-down") || isFiveInRow(i,j,"up")||isFiveInRow(i,j,"down") || isFiveInRow(i,j,"left")||isFiveInRow(i,j,"right")
                             ||isFiveInRow(i,j,"left-down") || isFiveInRow(i,j,"right-up") || isFiveInRow(i,j,"left-up"))
-                                return lp.getOponent().getStone().getColor();
+                                return lp.getStone().getColor();
                         //throw new Exception("Winner is found. Winner color is "+lp.getOponent().getStone().getColor());
             }
         return null;
