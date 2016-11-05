@@ -35,7 +35,7 @@ public class OnlinePlayer extends Player{
             System.out.println("I drawed");
             try {
                 client.send("0 "+x+" "+y);
-                s=client.receive().split(" ");
+                s=client.receive().trim().split(" ");
             } catch (IOException e) {
                 e.printStackTrace();
             }
