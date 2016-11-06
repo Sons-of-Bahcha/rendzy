@@ -2,7 +2,6 @@ package client;
 
 
 import GameObjects.stone.Stone;
-import not_name.LocalPlayer;
 import not_name.OnlinePlayer;
 
 import java.awt.*;
@@ -13,14 +12,14 @@ import java.net.Socket;
 
 public class Client implements ActionListener{
     static final int port=1234;
-    static final String addres="7.54.240.130";
+    static final String address ="192.168.0.58";
 
     DataInputStream read;
     DataOutputStream write;
 
     public Client(){
         try{
-            Socket sc=new Socket(addres,port);
+            Socket sc=new Socket(address,port);
             System.out.println("Connection -- true");
             read=new DataInputStream(sc.getInputStream());
             write=new DataOutputStream(sc.getOutputStream());
@@ -78,7 +77,7 @@ public class Client implements ActionListener{
         try {
             BufferedReader keyboard=new BufferedReader(new InputStreamReader(System.in));
             System.out.println("русский текст");
-            Socket sc=new Socket(addres,port);
+            Socket sc=new Socket(address,port);
             System.out.println("Connect");
 
             DataInputStream read=new DataInputStream(sc.getInputStream());
@@ -86,11 +85,11 @@ public class Client implements ActionListener{
 
             System.out.println("have created streams");
 
-            String line;
+
             byte[] b=new byte[1024];
             while(true){
-                read.read(b);
-                line=new String(b);
+                int len = read.read(b);
+                String line=new String(b,0,len);
                 System.out.println("I received: "+line);
 
                 line=keyboard.readLine();
