@@ -1,8 +1,7 @@
-package GameObjects;
+package gameObjects;
 
-import GameObjects.stone.DrawStone;
-import GameObjects.stone.EmptyCell;
-import GameObjects.stone.Stone;
+import gameObjects.stone.DrawStone;
+import gameObjects.stone.EmptyCell;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

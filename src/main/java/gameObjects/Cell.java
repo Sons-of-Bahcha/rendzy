@@ -1,7 +1,6 @@
-package GameObjects;
+package gameObjects;
 
-import GameObjects.stone.DrawStone;
-import GameObjects.stone.EmptyCell;
+import gameObjects.stone.DrawStone;
 
 /**
  * Класс Cell, это просто ячейка на игровом поле. Эта ячейка будет восприниматься, как точка, без ширины и длины.

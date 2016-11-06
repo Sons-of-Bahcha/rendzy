@@ -1,6 +1,6 @@
 package main;
 
-import GameObjects.stone.Stone;
+import gameObjects.stone.Stone;
 import client.Client;
 import control.MouseControl;
 import gui.Window;
@@ -8,6 +8,7 @@ import not_name.LocalPlayer;
 import not_name.OnlinePlayer;
 
 import java.awt.*;
+import java.io.IOException;
 
 public class Main {
 
@@ -21,7 +22,12 @@ public class Main {
      * инициализируем игрока для мультиплеерной игры
      */
     public static void initMultiplayer(Window w){
-        Client c=new Client();
+        Client c= null;
+        try {
+            c = new Client("192.168.0.58",1234);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         OnlinePlayer p = c.getPlayer();
         System.out.println(" p =="+(p));
         System.out.println("Color="+p.getStone().getColor());

@@ -1,4 +1,4 @@
-package GameObjects.stone;
+package gameObjects.stone;
 
 import java.awt.*;
 

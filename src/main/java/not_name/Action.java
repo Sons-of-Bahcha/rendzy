@@ -1,6 +1,6 @@
 package not_name;
 
-import GameObjects.GameMap;
+import gameObjects.GameMap;
 import gui.Window;
 
 /**
@@ -15,8 +15,8 @@ import gui.Window;
 public interface Action {
     /**
      * @param w - Игровое поле {@link gui.Window}
-     * @param x - координата x ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}
-     * @param y - координата y ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}
+     * @param x - координата x ячейки {@link gameObjects.Cell} игрового поля {@link GameMap}
+     * @param y - координата y ячейки {@link gameObjects.Cell} игрового поля {@link GameMap}
      */
     void action(Window w, int x, int y);
 }

@@ -1,6 +1,6 @@
 package not_name;
 
-import GameObjects.stone.Stone;
+import gameObjects.stone.Stone;
 
 /**
  * Created by Viteker on 23.10.2016.

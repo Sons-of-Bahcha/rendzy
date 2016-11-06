@@ -1,4 +1,4 @@
-package GameObjects.stone;
+package gameObjects.stone;
 
 import java.awt.*;
 
@@ -25,8 +25,8 @@ public class Stone implements DrawStone {
      * Метод в котором рисуется нолик, причем цвет устанавливается по умолчанию устанавливается красным
      *
      * @param g    - Графический объект на котором рисуем данную фигуру
-     * @param x    - Координата x {@link GameObjects.GameMap}
-     * @param y    - Координата y {@link GameObjects.GameMap}
+     * @param x    - Координата x {@link gameObjects.GameMap}
+     * @param y    - Координата y {@link gameObjects.GameMap}
      * @param size - Размер этой самой фигуры учитываем, что width=height
      *
      * !!! Замечание - метод не тестировался. Должен отрисоваться нолик в гр. объекте, в нужном месте и с нужными размерами

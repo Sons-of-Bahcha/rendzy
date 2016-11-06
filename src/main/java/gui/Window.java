@@ -1,6 +1,6 @@
 package gui;
 
-import GameObjects.GameMap;
+import gameObjects.GameMap;
 
 import javax.swing.*;
 import java.awt.*;
@@ -48,7 +48,7 @@ public class Window extends JFrame {
      */
     private Window(int width, int height){
         super();
-        this.bg=new GameObjects.GameMap(50,50,BufferedImage.TYPE_INT_RGB,32,15);
+        this.bg=new gameObjects.GameMap(50,50,BufferedImage.TYPE_INT_RGB,32,15);
     }
 
     /**

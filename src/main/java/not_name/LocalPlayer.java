@@ -1,7 +1,7 @@
 package not_name;
 
-import GameObjects.GameMap;
-import GameObjects.stone.Stone;
+import gameObjects.GameMap;
+import gameObjects.stone.Stone;
 import control.Control;
 import gui.Window;
 
@@ -56,8 +56,8 @@ public class LocalPlayer extends Player {
      * Если нет, то управление не передается и просто ждем, когда игрок выберет пустое поле
      *
      * @param w - игровое поле на которм проверяем пустое поле {@link gui.Window}
-     * @param x - координата x проверяющей ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}
-     * @param y - координата y проверяющей ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}
+     * @param x - координата x проверяющей ячейки {@link gameObjects.Cell} игрового поля {@link GameMap}
+     * @param y - координата y проверяющей ячейки {@link gameObjects.Cell} игрового поля {@link GameMap}
      */
     public void action(Window w, int x, int y) {
         if(checkEmptyCell(w.getBg(), x, y)){
@@ -70,8 +70,8 @@ public class LocalPlayer extends Player {
      *  Проверка пустая ли ячейка поля. И можно ли туда положить камушек
      *
      * @param m - игровое поле, в котором проверяем пустое поле {@link GameMap}
-     * @param x - координата x проверяющей ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}
-     * @param y - координата y проверяющей ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}
+     * @param x - координата x проверяющей ячейки {@link gameObjects.Cell} игрового поля {@link GameMap}
+     * @param y - координата y проверяющей ячейки {@link gameObjects.Cell} игрового поля {@link GameMap}
      * @return возвращает true, если ячейка поля пуста и false  в противном случае
      */
     private boolean checkEmptyCell(GameMap m,int x, int y) {

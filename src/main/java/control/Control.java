@@ -1,7 +1,6 @@
 package control;
 
-import GameObjects.GameMap;
-import not_name.LocalPlayer;
+import gameObjects.GameMap;
 import not_name.Player;
 
 /**

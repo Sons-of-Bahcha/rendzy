@@ -1,8 +1,8 @@
 package not_name;
 
-import GameObjects.Cell;
-import GameObjects.GameMap;
-import GameObjects.stone.Stone;
+import gameObjects.Cell;
+import gameObjects.GameMap;
+import gameObjects.stone.Stone;
 import client.Client;
 import gui.Window;
 
@@ -35,7 +35,7 @@ public class OnlinePlayer extends Player{
             System.out.println("I drawed");
             try {
                 client.send("0 "+x+" "+y);
-                s=client.receive().trim().split(" ");
+                s=client.receive().split(" ");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -55,8 +55,8 @@ public class OnlinePlayer extends Player{
      *  Проверка пустая ли ячейка поля. И можно ли туда положить камушек
      *
      * @param m - игровое поле, в котором проверяем пустое поле {@link GameMap}
-     * @param x - координата x проверяющей ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}
-     * @param y - координата y проверяющей ячейки {@link GameObjects.Cell} игрового поля {@link GameMap}
+     * @param x - координата x проверяющей ячейки {@link gameObjects.Cell} игрового поля {@link GameMap}
+     * @param y - координата y проверяющей ячейки {@link gameObjects.Cell} игрового поля {@link GameMap}
      * @return возвращает true, если ячейка поля пуста и false  в противном случае
      */
     private boolean checkEmptyCell(GameMap m,int x, int y) {
