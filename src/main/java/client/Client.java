@@ -66,9 +66,9 @@ public class Client implements ActionListener{
 
     }
     public String receive() throws IOException {
-        byte[] b=new byte[5];
-        read.read(b);
-        String s=new String(b);
+        byte[] b=new byte[10];
+        int len=read.read(b);
+        String s=new String(b,0,len);
         System.out.println("I received: "+s);
         return s;
     }
